@@ -9,6 +9,8 @@ let demoLink = document.querySelectorAll(".demolink");
 let codeLink = document.querySelectorAll(".codelink");
 let projectBtn = document.querySelectorAll(".project-btn");
 let nav = document.querySelector("nav");
+let mobileContact = document.querySelector(".mobile-contact");
+let mobileContactA = document.querySelector(".mobile-contact-a");
 
 intro.style.opacity = 1;
 
@@ -26,6 +28,14 @@ for (let link of dropdownLink) {
     xClick();
   });
 }
+
+mobileContact.addEventListener("mouseover", function () {
+  mobileContactA.style.color = "white";
+});
+
+mobileContact.addEventListener("mouseout", function () {
+  mobileContactA.style.color = "black";
+});
 
 function burgerClick() {
   dropdownX.style.display = "initial";
