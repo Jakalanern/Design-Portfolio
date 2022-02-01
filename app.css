@@ -105,6 +105,11 @@ body {
 
 .dropdown-links .mobile-contact-a {
   font-weight: 600;
+  transition: color 0.25s;
+}
+
+.dropdown-links .mobile-contact-a:hover {
+  color: white;
 }
 
 .dropdown-links a {
