@@ -4,33 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="app.css" />
     <title>Jack Stevens Portfolio</title>
   </head>
   <body>
     <nav>
-      <span class="title">JStevens Design.</span>
+      <a href="#main" class="title-a"
+        ><span class="title">JStevens Design.</span></a
+      >
       <div class="burger">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
       </div>
+      <ul class="desktop-links">
+        <li class="desktop-home desktop-link">
+          <a href="#main" class="desktop-home-a">HOME</a>
+        </li>
+        <li class="desktop-work desktop-link"><a href="#projects">WORK</a></li>
+        <li class="desktop-about desktop-link"><a>ABOUT</a></li>
+        <li class="desktop-contact desktop-link">
+          <a class="desktop-contact-a">CONTACT</a>
+        </li>
+      </ul>
     </nav>
     <div class="dropdown">
       <div class="dropdown-container">
+        <a href="#main" class="title-a"
+          ><span class="title">JStevens Design.</span></a
+        >
         <div class="dropdown-x">X</div>
         <ul class="dropdown-links">
-          <li class="home dropdown-link">HOME</li>
-          <li class="work dropdown-link">WORK</li>
-          <li class="about dropdown-link">ABOUT</li>
-          <li class="contact dropdown-link">CONTACT</li>
+          <li class="mobile-home dropdown-link">
+            <a href="#main" class="mobile-home-a">HOME</a>
+          </li>
+          <li class="mobile-work dropdown-link">
+            <a href="#projects" class="mobile-work-a">WORK</a>
+          </li>
+          <li class="mobile-about dropdown-link">
+            <a class="mobile-about-a">ABOUT</a>
+          </li>
+          <li class="mobile-contact dropdown-link">
+            <a class="mobile-contact-a">CONTACT</a>
+          </li>
         </ul>
       </div>
     </div>
-    <section class="main">
+    <section class="main" id="main">
       <div class="intro">
         I'm <span class="name">Jack Stevens</span>, a Web Designer from
-        <span class="cali">California</span>
+        <span class="cali">California.</span>
       </div>
       <p>
         Helping startups and small businesses<span
@@ -39,29 +63,35 @@
       </p>
       <div class="button-container">
         <button>CONTACT</button>
-        <a href="">My Work</a>
+        <a href="#projects">My Work</a>
       </div>
     </section>
-    <section class="projects">
-      <h1>Highlighted<br />projects</h1>
-      <div class="project-grid">
-        <div class="img-container">
-          <a href="https://jakalanern.github.io/Artfolio/">
-            <img src="sites/site7-resize.png" alt="" class="project-img" />
-          </a>
-        </div>
-        <div class="img-container">
-          <a href="https://jakalanern.github.io/Blog/">
-            <img src="sites/site9.png" alt="" class="project-img" />
-          </a>
-        </div>
-        <div class="img-container">
-          <a href="https://jakalanern.github.io/Mobile-Landing-Page-JS/">
-            <img src="sites/site10-resize.png" alt="" class="project-img" />
-          </a>
-        </div>
+    <section class="projects" id="projects">
+      <h1>
+        Some of my<br />
+        projects.
+      </h1>
+      <div class="project-gallery">
+        <a href="https://jakalanern.github.io/Artfolio/">
+          <img src="sites/site7-resize.png" alt="" class="project-img1" />
+        </a>
+        <a href="https://jakalanern.github.io/Mobile-Landing-Page-JS/">
+          <img src="sites/site10-resize.png" alt="" class="project-img2" />
+        </a>
+        <a href="https://jakalanern.github.io/Blog/">
+          <img src="sites/site9.png" alt="" class="project-img3" />
+        </a>
+        <a href="https://jakalanern.github.io/Tic-Tac-Toe/">
+          <img
+            src="sites/tictacotoe - resize.png"
+            alt=""
+            class="project-img4"
+          />
+        </a>
       </div>
-      <a href="" class="see-projects">See all projects</a>
+      <a href="https://github.com/Jakalanern" class="see-projects"
+        >See all projects</a
+      >
     </section>
     <script src="app.js"></script>
   </body>
