@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="app.css" />
     <title>Jack Stevens Portfolio</title>
   </head>
   <body>
-    <nav>
+    <div id="intro-anim"></div>
+    <nav id="nav">
       <a href="#main" class="title-a"
         ><span class="title">JStevens Design.</span></a
       >
@@ -52,16 +52,16 @@
       </div>
     </div>
     <section class="main" id="main">
-      <div class="intro">
+      <div class="intro" id="main-intro">
         I'm <span class="name">Jack Stevens</span>, a Web Designer from
         <span class="cali">California.</span>
       </div>
-      <p>
+      <p id="intro-subtext">
         Helping startups and small businesses<span
           >with consistent quality and precision.</span
         >
       </p>
-      <div class="button-container">
+      <div class="button-container" id="intro-subtext">
         <button>CONTACT</button>
         <a href="#projects">My Work</a>
       </div>
@@ -93,6 +93,9 @@
         >See all projects</a
       >
     </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="gsap.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

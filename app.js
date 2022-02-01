@@ -12,7 +12,9 @@ let nav = document.querySelector("nav");
 let mobileContact = document.querySelector(".mobile-contact");
 let mobileContactA = document.querySelector(".mobile-contact-a");
 
-intro.style.opacity = 1;
+// setTimeout(function () {
+//   window.scrollTo(0, 0);
+// }, 50);
 
 burger.addEventListener("click", function () {
   burgerClick();
@@ -45,6 +47,14 @@ function burgerClick() {
     l.style.background = "white";
   }
 }
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 100) {
+    nav.style.background = "white";
+  } else {
+    nav.style.background = "transparent";
+  }
+});
 
 function dropdownAnim() {
   setTimeout(function () {

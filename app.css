@@ -25,9 +25,8 @@
   transition: font-size 0.15s;
 }
 
-html,
-body {
-  height: 100%;
+body,
+html {
   width: 100%;
   overflow-x: hidden;
 }
@@ -38,6 +37,58 @@ body {
   color: var(--clr-dark);
   background: var(--clr-white);
 }
+
+::-webkit-scrollbar {
+  width: 7.5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* GSAP */
+
+/* #intro-anim {
+  top: 0;
+  display: flex;
+  position: fixed;
+  background: rgb(98, 98, 98);
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  overflow: hidden;
+}
+
+#black-box1 {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+}
+
+#black-box2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+} */
+
+/* END */
 
 .dropdown {
   position: fixed;
@@ -172,12 +223,13 @@ body {
   z-index: 2;
   cursor: pointer;
   font-weight: 400;
-  transition: transform 0.3s;
+  transition: transform 0.3s, color 0.25s;
   padding: 0.25em 0.25em;
 }
 
 .dropdown-x:hover {
   transform: rotate(180deg) scaleX(1.45);
+  color: var(--clr-blue-2);
 }
 
 .desktop-links {
@@ -187,14 +239,16 @@ body {
 nav {
   width: 100%;
   position: fixed;
-  top: 0;
   display: flex;
+  top: 0;
+  transform: translateY(50px);
   justify-content: space-between;
   align-items: center;
   padding: 1em 1em;
-  transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in, background 0.25s;
   z-index: 2;
-  background: rgb(255, 255, 255);
+  opacity: 0;
+  background: transparent;
 }
 
 nav .title-a {
@@ -219,12 +273,17 @@ nav .burger {
   height: 40px;
   padding: 10px;
   cursor: pointer;
+  transition: transform 0.25s;
 }
 
 nav .line {
   height: 3px;
   background: black;
-  transition: background 0.2s ease-in;
+  transition: background 0.25s;
+}
+
+.burger:hover {
+  transform: rotate(180deg);
 }
 
 .main {
@@ -233,10 +292,9 @@ nav .line {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 0em 2em 0em 1em;
+  padding: 4em 2em 0em 1em;
   padding-bottom: 15%;
-  margin-top: 4em;
-  transition: all 0.25s;
+  transform: translateY(45px);
 }
 
 /* Curvy Background */
@@ -253,18 +311,17 @@ nav .line {
 .main .intro {
   opacity: 0;
   position: relative;
-  font-size: 2.35em;
+  font-size: 2.325em;
   font-weight: 600;
   margin-top: 140px;
-  transition: opacity 1s;
 }
 
 /* Blue "WITHERS" behind intro */
 .main .intro::after {
   font-family: "Abril Fatface", sans-serif;
   position: absolute;
-  content: "HTML/CSS/JS";
-  top: -75px;
+  content: "HTML|CSS|JS";
+  top: -50px;
   left: -0px;
   font-size: 1.25em;
   font-weight: 400;
@@ -360,13 +417,14 @@ nav .line {
   align-items: center;
   background: var(--clr-blue-1);
   padding: 0em 1em;
+  transform: translateY(40px);
 }
 
 .projects h1 {
   position: relative;
   font-weight: 800;
   font-size: 2.25em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   margin-top: 2.25em;
   text-align: center;
 }
@@ -395,10 +453,10 @@ nav .line {
   text-decoration: underline;
   font-weight: 600;
   font-size: 1.25em;
-  margin-top: 2em;
+  margin-top: 5em;
   color: var(--clr-blue-4);
   margin-bottom: 8em;
-  transition: font-size 0.25s;
+  transition: font-size 0.25s, color 0.25s;
 }
 
 .projects .see-projects::after {
@@ -409,10 +467,30 @@ nav .line {
   right: -30px;
 }
 
+.projects .see-projects:hover {
+  color: #0000009a;
+}
+
+.main #intro-subtext {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
 @media (min-width: 425px) {
   .projects .project-gallery img {
     width: 400px;
     height: 400px;
+  }
+
+  .main .button-container {
+    flex-direction: row;
+    align-self: start;
+    margin-bottom: 3em;
+  }
+
+  .main a {
+    margin-left: 2em;
+    margin-bottom: 0;
   }
 }
 
@@ -471,19 +549,17 @@ nav .line {
     font-size: 2.75em;
   }
 
+  .main .intro:after {
+    top: -60px;
+  }
+
   .main p {
     flex-direction: column;
     font-size: 1.1em;
   }
 
-  .main .button-container {
-    flex-direction: row;
-    align-self: start;
-    margin-bottom: 3em;
-  }
-
   .main a {
-    margin-left: 4em;
+    margin-left: 2em;
     margin-bottom: 0;
   }
 
@@ -514,18 +590,6 @@ nav .line {
   }
 }
 
-@media (min-width: 926px) {
-  .projects .project-gallery {
-    gap: 1em;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .projects .project-gallery img {
-    width: 450px;
-    height: 450px;
-  }
-}
-
 @media (min-width: 750px) {
   .main .button-container a {
     font-size: 1.25em;
@@ -542,6 +606,10 @@ nav .line {
     font-size: 3.25em;
   }
 
+  .main .intro:after {
+    top: -75px;
+  }
+
   .main p {
     flex-direction: row;
   }
@@ -556,6 +624,18 @@ nav .line {
 
   .projects .see-projects {
     font-size: 1.5em;
+  }
+}
+
+@media (min-width: 926px) {
+  .projects .project-gallery {
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects .project-gallery img {
+    width: 450px;
+    height: 450px;
   }
 }
 
@@ -609,14 +689,19 @@ nav .line {
   }
 
   .main .intro::after {
-    left: 10%;
-    top: -125px;
-    font-size: 2em;
+    top: -100px;
+    font-size: 1.5em;
   }
 
   .main .button-container {
     align-self: center;
+    flex-direction: column;
   }
+
+  .main .button-container a {
+    margin-left: 0;
+  }
+
   .main::before {
     height: 0;
   }
@@ -645,9 +730,8 @@ nav .line {
   }
 
   .main .intro::after {
-    left: 10%;
-    top: -190px;
-    font-size: 2.25em;
+    top: -135px;
+    font-size: 1.5em;
   }
 
   .main .button-container button {
