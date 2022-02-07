@@ -10,9 +10,7 @@
   <body>
     <div id="intro-anim"></div>
     <nav id="nav">
-      <a href="#main" class="title-a"
-        ><span class="title">JStevens Design.</span></a
-      >
+      <a class="title-a"><span class="title">JStevens Design.</span></a>
       <div class="burger">
         <div class="line"></div>
         <div class="line"></div>
@@ -34,7 +32,7 @@
     <div class="dropdown">
       <div class="dropdown-container">
         <a href="#main" class="title-a"
-          ><span class="title">JStevens Design.</span></a
+          ><span class="title dropdown-title">JStevens Design.</span></a
         >
         <div class="dropdown-x">X</div>
         <ul class="dropdown-links">
@@ -64,8 +62,8 @@
         >
       </p>
       <div class="button-container" id="intro-subtext">
-        <button>CONTACT</button>
-        <a href="#projects">My Work</a>
+        <a href="#contact"><button>CONTACT</button></a>
+        <a href="#projects" class="mywork">My Work</a>
       </div>
     </section>
     <section class="projects" id="projects">
@@ -95,8 +93,8 @@
         >See all projects</a
       >
     </section>
-    <section class="resume" id="resume">
-      <h1>My Resume.</h1>
+    <section class="resume">
+      <h1 id="resume">My Resume.</h1>
       <img src="Jack Stevens UX Design Resume.png" alt="" class="resume-img" />
     </section>
     <section class="contact" id="contact">
@@ -107,6 +105,7 @@
         <img src="icons/github (1).png" alt="" class="github icon" />
         <img src="icons/linkedin (1).png" alt="" class="linkedin icon" />
       </div>
+      <button class="scroll-btn">Scroll To Top</button>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="gsap.js"></script>

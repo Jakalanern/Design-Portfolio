@@ -15,10 +15,21 @@ let resumeImg = document.querySelector(".resume-img");
 let email = document.querySelector(".email");
 let github = document.querySelector(".github");
 let linkedin = document.querySelector(".linkedin");
+let scrollBtn = document.querySelector(".scroll-btn");
+let title = document.querySelector(".dropdown-title");
 
 // setTimeout(function () {
 //   window.scrollTo(0, 0);
 // }, 50);
+
+title.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+  xClick();
+});
+
+scrollBtn.addEventListener("click", function () {
+  window.scrollTo(0, 0);
+});
 
 burger.addEventListener("click", function () {
   burgerClick();
@@ -96,16 +107,14 @@ function xClick() {
     link.style.opacity = 0;
   }
 
-  setTimeout(function () {
-    for (let link of dropdownLink) {
-      link.style.transform = "translateX(400%)";
-    }
-    dropdown.style.top = "-100%";
-    nav.style.color = "black";
-    for (let l of line) {
-      l.style.background = "black";
-    }
-  }, 0);
+  for (let link of dropdownLink) {
+    link.style.transform = "translateX(400%)";
+  }
+  dropdown.style.top = "-100%";
+  nav.style.color = "black";
+  for (let l of line) {
+    l.style.background = "black";
+  }
 }
 
 resumeImg.addEventListener("click", function () {

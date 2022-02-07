@@ -393,7 +393,7 @@ nav .line {
   color: black;
 }
 
-.main a {
+.main .mywork {
   position: relative;
   text-decoration: underline;
   font-weight: 600;
@@ -402,7 +402,7 @@ nav .line {
   align-self: center;
 }
 
-.main a::after {
+.main .mywork::after {
   position: absolute;
   content: "→";
   font-size: 1.25em;
@@ -482,6 +482,7 @@ nav .line {
 .resume {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background: var(--clr-blue-1);
 }
@@ -490,6 +491,7 @@ nav .line {
   font-size: 2.25em;
   font-weight: 600;
   margin-bottom: 1em;
+  padding-top: 2em;
 }
 
 .resume img {
@@ -513,6 +515,7 @@ nav .line {
   background: var(--clr-blue-1);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1em;
   padding-bottom: 6em;
@@ -559,6 +562,27 @@ nav .line {
 
 .contact .icon {
   width: 35px;
+}
+
+.contact button {
+  padding: 1rem 2rem;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 1em;
+  margin-top: 8em;
+  margin-bottom: 0;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.25s;
+  border: 2px solid black;
+}
+
+.contact button:hover {
+  cursor: pointer;
+  background: none;
+  border: 2px solid black;
+  color: black;
 }
 
 /* MEDIA QUERIES */
@@ -757,6 +781,10 @@ nav .line {
   .projects .see-projects {
     font-size: 1.5em;
   }
+
+  .contact button {
+    font-size: 1.25em;
+  }
 }
 
 @media (min-width: 926px) {
@@ -834,6 +862,10 @@ nav .line {
 
   .contact span {
     font-size: 2em;
+  }
+
+  .contact button {
+    font-size: 1.5em;
   }
 }
 
