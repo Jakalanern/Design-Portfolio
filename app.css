@@ -476,6 +476,92 @@ nav .line {
   transform: translateY(50px);
 }
 
+/* RESUME */
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--clr-blue-1);
+}
+
+.resume h1 {
+  font-size: 2.25em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.resume img {
+  cursor: pointer;
+  transition: transform 0.25s;
+  margin-top: 1em;
+  margin-bottom: 8em;
+  border-radius: 1em;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.349);
+  width: 333px;
+}
+
+.resume img:hover {
+  transform: scale(1.025);
+}
+
+/* CONTACT ME */
+
+.contact {
+  width: 100%;
+  background: var(--clr-blue-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding-bottom: 6em;
+  padding-top: 2em;
+}
+
+.contact h1 {
+  font-size: 2.25em;
+  font-weight: 600;
+}
+
+.contact span {
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.contact span:nth-of-type(1):hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.contact .icons {
+  display: flex;
+  gap: 1.25em;
+}
+
+.contact .github {
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+.contact .linkedin {
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+
+.contact .github:hover {
+  transform: scale(1.05);
+}
+
+.contact .linkedin:hover {
+  transform: scale(1.05);
+}
+
+.contact .icon {
+  width: 35px;
+}
+
+/* MEDIA QUERIES */
+
 @media (min-width: 425px) {
   .projects .project-gallery img {
     width: 400px;
@@ -491,6 +577,10 @@ nav .line {
   .main a {
     margin-left: 2em;
     margin-bottom: 0;
+  }
+
+  .resume img {
+    width: 375px;
   }
 }
 
@@ -567,6 +657,27 @@ nav .line {
     font-size: 2.6em;
   }
 
+  .resume img {
+    width: 525px;
+  }
+
+  .resume h1 {
+    font-size: 2.6em;
+  }
+
+  .contact {
+    padding-top: 6em;
+    padding-bottom: 8em;
+  }
+
+  .contact h1 {
+    font-size: 2.6em;
+  }
+
+  .contact span {
+    font-size: 1.5em;
+  }
+
   .projects .project-gallery img {
     width: 500px;
     height: 500px;
@@ -587,6 +698,10 @@ nav .line {
   }
   nav .desktop-links li .desktop-contact-a {
     margin-left: 1.5em;
+  }
+
+  .resume img {
+    width: 625px;
   }
 }
 
@@ -622,6 +737,22 @@ nav .line {
     font-size: 3em;
   }
 
+  .resume img {
+    width: 650px;
+  }
+
+  .resume h1 {
+    font-size: 3em;
+  }
+
+  .contact h1 {
+    font-size: 3em;
+  }
+
+  .contact span {
+    font-size: 1.75em;
+  }
+
   .projects .see-projects {
     font-size: 1.5em;
   }
@@ -655,6 +786,17 @@ nav .line {
   .projects h1 {
     font-size: 3.25em;
   }
+  .resume h1 {
+    font-size: 3.25em;
+  }
+
+  .contact h1 {
+    font-size: 3.25em;
+  }
+
+  .contact span {
+    font-size: 1.75em;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -680,6 +822,17 @@ nav .line {
 
   .projects h1 {
     font-size: 3.5em;
+  }
+  .resume h1 {
+    font-size: 3.5em;
+  }
+
+  .contact h1 {
+    font-size: 3.5em;
+  }
+
+  .contact span {
+    font-size: 2em;
   }
 }
 

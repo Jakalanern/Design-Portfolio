@@ -11,6 +11,10 @@ let projectBtn = document.querySelectorAll(".project-btn");
 let nav = document.querySelector("nav");
 let mobileContact = document.querySelector(".mobile-contact");
 let mobileContactA = document.querySelector(".mobile-contact-a");
+let resumeImg = document.querySelector(".resume-img");
+let email = document.querySelector(".email");
+let github = document.querySelector(".github");
+let linkedin = document.querySelector(".linkedin");
 
 // setTimeout(function () {
 //   window.scrollTo(0, 0);
@@ -103,3 +107,19 @@ function xClick() {
     }
   }, 0);
 }
+
+resumeImg.addEventListener("click", function () {
+  window.open("Jack Stevens UX Design Resume.pdf");
+});
+
+email.addEventListener("click", function () {
+  window.location = "mailto:jws.design@gmail.com";
+});
+
+github.addEventListener("click", function () {
+  window.open("https://github.com/Jakalanern");
+});
+
+linkedin.addEventListener("click", function () {
+  window.open("https://www.linkedin.com/in/jack-stevens-889121b1/");
+});
