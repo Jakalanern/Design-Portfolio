@@ -16,15 +16,20 @@ let email = document.querySelector(".email");
 let github = document.querySelector(".github");
 let linkedin = document.querySelector(".linkedin");
 let scrollBtn = document.querySelector(".scroll-btn");
-let title = document.querySelector(".dropdown-title");
+let dropdownTitle = document.querySelector(".dropdown-title");
+let title = document.querySelector(".title");
 
 // setTimeout(function () {
 //   window.scrollTo(0, 0);
 // }, 50);
 
-title.addEventListener("click", function () {
+dropdownTitle.addEventListener("click", function () {
   window.scrollTo(0, 0);
   xClick();
+});
+
+title.addEventListener("click", function () {
+  window.scrollTo(0, 0);
 });
 
 scrollBtn.addEventListener("click", function () {
@@ -47,25 +52,25 @@ for (let link of dropdownLink) {
 }
 
 mobileContact.addEventListener("mouseover", function () {
-  mobileContactA.style.color = "white";
+  mobileContactA.style.color = "var(--clr-white)";
 });
 
 mobileContact.addEventListener("mouseout", function () {
-  mobileContactA.style.color = "black";
+  mobileContactA.style.color = "var(--clr-black)";
 });
 
 function burgerClick() {
   dropdownX.style.display = "initial";
   dropdown.style.top = "0%";
-  nav.style.color = "white";
+  nav.style.color = "var(--clr-white)";
   for (let l of line) {
-    l.style.background = "white";
+    l.style.background = "var(--clr-white)";
   }
 }
 
 window.addEventListener("scroll", () => {
   if (window.scrollY >= 100) {
-    nav.style.background = "white";
+    nav.style.background = "var(--clr-white)";
   } else {
     nav.style.background = "transparent";
   }
@@ -111,9 +116,9 @@ function xClick() {
     link.style.transform = "translateX(400%)";
   }
   dropdown.style.top = "-100%";
-  nav.style.color = "black";
+  nav.style.color = "var(--clr-black)";
   for (let l of line) {
-    l.style.background = "black";
+    l.style.background = "var(--clr-black)";
   }
 }
 
