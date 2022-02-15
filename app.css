@@ -584,7 +584,6 @@ nav .line {
 }
 
 .contact-wrapper {
-  position: initial;
   display: flex;
   flex-direction: column;
   justify-content: center;

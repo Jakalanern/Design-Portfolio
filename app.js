@@ -123,11 +123,11 @@ function xClick() {
 }
 
 resumeImg.addEventListener("click", function () {
-  window.open("Jack Stevens UX Design Resume.pdf");
+  window.open("Jack Stevens Web Development Resume 2022.pdf");
 });
 
 email.addEventListener("click", function () {
-  window.location = "mailto:jws.design@gmail.com";
+  window.location = "mailto:jack.withers.stevens@gmail.com";
 });
 
 github.addEventListener("click", function () {
