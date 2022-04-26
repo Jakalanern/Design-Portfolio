@@ -473,6 +473,131 @@ nav .line {
 
 /* PROJECTS */
 
+/* SLIDER  */
+
+.slider-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 1em;
+  outline: 2px solid black;
+}
+
+.slider:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.932);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4em;
+}
+
+.overlay .image-desc {
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  margin-bottom: 3em;
+  line-height: 1.5em;
+  font-size: 1.05em;
+}
+
+.overlay .logos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.overlay .logo {
+  position: relative;
+  width: 50px;
+}
+
+.logo-descriptions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.github-logo-desc {
+  left: 160px;
+}
+
+.demo-logo-desc {
+  position: absolute;
+  right: 157.5px;
+}
+
+.logo-desc {
+  margin-top: 1em;
+  position: absolute;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.753);
+  font-weight: 400;
+}
+
+.overlay .demo-logo {
+  transition: 0.33s;
+  cursor: pointer;
+}
+
+.overlay .demo-logo:hover {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.overlay .github-logo {
+  transition: 0.33s;
+  cursor: pointer;
+}
+
+.overlay .github-logo:hover {
+  transform: scale(1.1) rotate(-360deg);
+}
+
+.slider .image {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-btn {
+  font-weight: 600;
+  padding: 0.5em;
+  margin: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: none;
+  border-radius: 50%;
+}
+
+.arrow {
+  width: 40px;
+}
+
+.slider-btn:hover {
+  transform: scale(1.2);
+}
+
+/* SLIDER END */
+
 .projects {
   display: flex;
   flex-direction: column;

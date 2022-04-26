@@ -1,3 +1,6 @@
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+let count = 0;
 let burger = document.querySelector(".burger");
 let line = document.querySelectorAll(".line");
 let dropdown = document.querySelector(".dropdown");
@@ -18,6 +21,102 @@ let linkedin = document.querySelector(".linkedin");
 let scrollBtn = document.querySelector(".scroll-btn");
 let dropdownTitle = document.querySelector(".dropdown-title");
 let title = document.querySelector(".title");
+let image = $(".image");
+let slider = $(".slider");
+let imageDesc = $(".image-desc");
+let gitBtn = $(".github-logo");
+let demoBtn = $(".demo-logo");
+let prevBtn = $(".previous-btn");
+let nextBtn = $(".next-btn");
+let projects = [
+  {
+    id: "1",
+    img: "./sites/brick4.png",
+    desc: "Fun challenge to re-create the 'Brick-Breaker' game using the canvas element and collision functions!<br><br> I implemented many custom features such as the pause system, pause screen, sounds, sound toggle system with button control, win/loss conditions, score counter, life counter, DARK / LIGHT themes with button control, game difficuly, etc!",
+    git: "https://github.com/Jakalanern/Challenge-20-Bricker-Breaker-Game",
+    demo: "https://jakalanern.github.io/Challenge-20-Bricker-Breaker-Game",
+    alt: "Site 1",
+  },
+  {
+    id: "2",
+    img: "./sites/flashcards.png",
+    desc: "Flashcard application coded from scratch with Vanilla JS!<br><br> Used an array of objects to store the information of each card, then iterated through them to create new flashcard elements on the page whenever the 'Create Card' form is submitted.<br><br> Each card has a hidden answer which can be revealed with a toggle. Each card is fully editable and removable as well.",
+    git: "https://github.com/Jakalanern/Challenge-15-Flash-Card-Challenge",
+    demo: "https://jakalanern.github.io/Challenge-15-Flash-Card-Challenge/",
+    alt: "Site 1",
+  },
+  {
+    id: "5",
+    img: "./sites/tictacotoe - resize.png",
+    desc: "Tic-Tac-Toe game made from scratch using Vanilla JS!<br><br> Game includes player name input screens, sound effects, a sound toggle system, score tracking system, scoreboard with player name display, win screen with confetti, loss screen, draw conditions, clear board button, full reset button, and more!",
+    git: "https://github.com/Jakalanern/Tic-Tac-Toe",
+    demo: "https://jakalanern.github.io/Tic-Tac-Toe/",
+    alt: "Tic Tac Toe Game",
+  },
+  {
+    id: "3",
+    img: "./sites/budget.png",
+    desc: "Budget Calculator coded from scratch using Vanilla JS!<br><br> Features trackable expenses that append themselves to a list. Each expense is fully editable and removable. All expenses added or removed will be calculated into remaining balance based off of the overall budget specified!",
+    git: "https://github.com/Jakalanern/Challenge-16-Budget-Application-Intermediate",
+    demo: "https://jakalanern.github.io/Challenge-16-Budget-Application-Intermediate/",
+    alt: "Site 1",
+  },
+  {
+    id: "4",
+    img: "./sites/todo.png",
+    desc: "To-do list coded from scratch using Vanilla JS!<br><br> On input, a todo-item is created and appended to a list. Each todo-item can be crossed out, is fully editable, and removable.",
+    git: "https://github.com/Jakalanern/Challenge-12-To-Do-List",
+    demo: "https://jakalanern.github.io/Challenge-12-To-Do-List/",
+    alt: "Site 1",
+  },
+  {
+    id: "6",
+    img: "./sites/Chuck Norris.png",
+    desc: "Random Joke Generator using an API!<br><br> Used the fetch API to GET, then parsed the response to JSON and used that data to display a random joke on each button press. Taught me an understanding of Promises, AJAX, GET, POST, PUT, DELETE etc...",
+    git: "https://github.com/Jakalanern/Random-Joke-Generator-API-Fetch-",
+    demo: "https://jakalanern.github.io/Random-Joke-Generator-API-Fetch-/",
+    alt: "Site 1",
+  },
+];
+
+//DEFAULTS
+image.src = projects[0].img;
+image.alt = projects[0].alt;
+imageDesc.innerHTML = projects[0].desc;
+
+prevBtn.addEventListener("click", function () {
+  if (count > 0) {
+    count--;
+    changeImg(count);
+  } else {
+    count = projects.length - 1;
+    changeImg(count);
+  }
+});
+nextBtn.addEventListener("click", function () {
+  if (count < projects.length - 1) {
+    count++;
+    changeImg(count);
+  } else {
+    count = 0;
+    changeImg(count);
+  }
+});
+
+gitBtn.addEventListener("click", function () {
+  window.open(projects[count].git);
+});
+
+demoBtn.addEventListener("click", function () {
+  // Take to projects[count].demo
+  window.open(projects[count].demo);
+});
+
+function changeImg() {
+  image.src = projects[count].img;
+  image.alt = projects[count].alt;
+  imageDesc.innerHTML = projects[count].desc;
+}
 
 // setTimeout(function () {
 //   window.scrollTo(0, 0);
@@ -50,6 +149,22 @@ for (let link of dropdownLink) {
     xClick();
   });
 }
+
+resumeImg.addEventListener("click", function () {
+  window.open("Jack Stevens Web Development Resume 2022.pdf");
+});
+
+email.addEventListener("click", function () {
+  window.location = "mailto:jack.withers.stevens@gmail.com";
+});
+
+github.addEventListener("click", function () {
+  window.open("https://github.com/Jakalanern");
+});
+
+linkedin.addEventListener("click", function () {
+  window.open("https://www.linkedin.com/in/jack-stevens-889121b1/");
+});
 
 mobileContact.addEventListener("mouseover", function () {
   mobileContactA.style.color = "var(--clr-white)";
@@ -121,19 +236,3 @@ function xClick() {
     l.style.background = "var(--clr-black)";
   }
 }
-
-resumeImg.addEventListener("click", function () {
-  window.open("Jack Stevens Web Development Resume 2022.pdf");
-});
-
-email.addEventListener("click", function () {
-  window.location = "mailto:jack.withers.stevens@gmail.com";
-});
-
-github.addEventListener("click", function () {
-  window.open("https://github.com/Jakalanern");
-});
-
-linkedin.addEventListener("click", function () {
-  window.open("https://www.linkedin.com/in/jack-stevens-889121b1/");
-});
